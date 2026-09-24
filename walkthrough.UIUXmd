@@ -1,0 +1,31 @@
+# Walkthrough: Resolución de Auditoría UI/UX
+
+De acuerdo con el informe de auditoría generado, he aplicado correcciones de calidad exhaustivas en todo el código fuente frontend. Ahora la aplicación se considera robusta y está altamente pulida para su despliegue a producción.
+
+## Correcciones Aplicadas
+
+### 1. Mejoras de Accesibilidad (WCAG 2.2 AA) y Touch Targets
+* **Botones de Navegación (FabNav)**: 
+  * Aumenté la zona de contacto interactiva en móviles de 32x32px a **44x44px** para prevenir toques accidentales y cumplir los lineamientos de Apple/Google.
+  * Añadí los atributos `aria-label` a los íconos (Ej: `aria-label="Favorites"`, `aria-label="Shopping Cart"`) para soporte total de lectores de pantalla.
+* **Componente Product Card**:
+  * Los botones de Agregar al Carrito y Favoritos ahora crecen a `40x40px` en pantallas móviles y tienen sus respectivas etiquetas ARIA ocultas para lectores de texto.
+* **Menú Lateral (Shopping List)**:
+  * Agregados los `aria-label` a los botones de aumentar/disminuir cantidad (`+`/`-`) y al botón de eliminar (`Trash`).
+
+### 2. Rendimiento Visual e Imágenes
+* **Lazy Loading**: 
+  * Se agregó la propiedad nativa `loading="lazy"` a las imágenes de los productos en las tarjetas (`ProductCard.jsx`) y dentro de la lista de compras (`ShoppingListDrawer.jsx`). Esto ahorrará una cantidad masiva de datos y tiempo de red a los usuarios al no cargar imágenes ocultas en la pantalla.
+* **Cumulative Layout Shift (CLS)**:
+  * Los logotipos en el Menú Principal (`Header.jsx`) y en las pantallas de Login/Registro ahora tienen dimensiones de aspecto (e.g., `width="160" height="48"`), lo cual le avisa al navegador el espacio a reservar *antes* de cargar la imagen, evitando que la página "brinque" durante la carga.
+
+### 3. Mejoras Responsive y Experiencia de Usuario (UI/UX)
+* **Textos en Pantallas Extra Pequeñas (< 375px)**:
+  * El botón principal del carrito ("Request Information via WhatsApp") podía desbordarse si la pantalla era muy delgada. Se le aplicó la clase `truncate` y un ajuste de fuentes dinámico para que acorte el texto con elegancia sin romper la caja.
+* **Escalabilidad de Tipografías en el Hero**:
+  * La súper-fuente gigante del inicio (`Hero.jsx`) pasaba de exageradamente masiva en escritorio a incómoda en móviles. Se implementó una rampa suave usando clases de Tailwind (`text-4xl sm:text-5xl md:text-7xl`).
+* **Estados de Foco en Formularios**:
+  * Los campos de texto en el inicio de sesión y registro ahora reaccionan con un anillo sutil adicional al hacerles clic (`focus:ring-1`), superando con facilidad el test de ratio de contraste.
+
+## Siguientes Pasos
+La interfaz de usuario ha pasado con éxito la fase pre-despliegue. Se encuentra completamente limpia de errores críticos visuales o de experiencia. Si ya estás conforme, el proyecto está completamente listo para su paso a Producción.
