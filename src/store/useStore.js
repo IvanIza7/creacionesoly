@@ -74,24 +74,24 @@ export const useStore = create(
         whatsappNumber: '1234567890',
         hero: {
           backgroundImage: '',
-          headline: 'Pieces that',
-          highlightedWord: 'endure',
-          subtitle: 'Every jewel tells a story of craftsmanship and distinction.',
-          ctaLabel: 'EXPLORE COLLECTION',
-          footerTagline: 'COLLECTION 2026 · ONE-OF-A-KIND PIECES',
+          headline: 'Piezas que',
+          highlightedWord: 'perduran',
+          subtitle: 'Cada joya cuenta una historia de artesanía y distinción.',
+          ctaLabel: 'EXPLORAR COLECCIÓN',
+          footerTagline: 'COLECCIÓN 2026 · PIEZAS ÚNICAS',
           carouselProducts: [],
           autoplayInterval: 5000,
         },
         footer: {
           title: 'Creaciones Oly',
           subtitle: 'Creaciones Exclusivas',
-          newsletterTitle: 'Exclusive Access',
-          newsletterSubtitle: 'Subscribe to receive notices of private promotions and early access to our newest pieces.'
+          newsletterTitle: 'Acceso Exclusivo',
+          newsletterSubtitle: 'Suscríbete para recibir notificaciones sobre promociones privadas y acceso anticipado a nuestras piezas más recientes.'
         },
         uiTexts: {
-          newArrivals: 'NEW ARRIVALS',
-          viewCatalog: 'VIEW CATALOG',
-          searchPlaceholder: 'Search...'
+          newArrivals: 'RECIÉN LLEGADOS',
+          viewCatalog: 'VER CATÁLOGO',
+          searchPlaceholder: 'Buscar...'
         }
       },
       shoppingList: [],

@@ -59,7 +59,7 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
     <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-white w-full max-w-4xl shadow-2xl flex flex-col max-h-[90vh]">
         <div className="p-6 border-b border-black/10 flex justify-between items-center bg-[#fbfbfb]">
-          <h3 className="text-2xl font-display">{product ? 'Edit Product' : 'Quick Add Product'}</h3>
+          <h3 className="text-2xl font-display">{product ? 'Editar Producto' : 'Añadir Producto Rápido'}</h3>
           <button onClick={onClose} className="text-primary/40 hover:text-primary"><X size={24} /></button>
         </div>
         
@@ -67,7 +67,7 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
            {/* Left side: Image & Core */}
            <div className="w-full md:w-1/3 flex flex-col space-y-6">
              <ImageCropper 
-                label="Product Image (1:1)"
+                label="Imagen del Producto (1:1)"
                 aspectRatio={1} 
                 currentImageUrl={formData.image}
                 onUploadSuccess={(url) => setFormData({ ...formData, image: url })}
@@ -75,7 +75,7 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
              
              <div>
                 <TextInputWithCount 
-                  label="Product Name *" 
+                  label="Nombre del Producto *" 
                   required 
                   value={formData.name} 
                   onChange={(v) => setFormData({ ...formData, name: v })} 
@@ -83,7 +83,7 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
                 />
              </div>
              <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Sale Price *</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Precio de Venta *</label>
                 <input required type="number" name="priceSale" value={formData.priceSale} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none" />
              </div>
            </div>
@@ -92,14 +92,14 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
            <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
               
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Category</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Categoría</label>
                 <select name="category" value={formData.category} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none">
                   {catalogs.categories.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
 
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Gender</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Género</label>
                 <select name="gender" value={formData.gender} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none">
                   {catalogs.genders.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
@@ -120,41 +120,41 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
               </div>
 
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Stone</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Piedra</label>
                 <select name="stone" value={formData.stone} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none">
                   {catalogs.stones.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
 
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Size</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Tamaño</label>
                 <select name="size" value={formData.size} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none">
                   {catalogs.sizes.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
 
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Collection</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Colección</label>
                 <select name="collectionId" value={formData.collectionId} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none">
-                  <option value="">None</option>
+                  <option value="">Ninguna</option>
                   {collections.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                 </select>
               </div>
 
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Location</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Ubicación</label>
                 <select name="location" value={formData.location} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none">
                   {catalogs.locations.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
 
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Current Stock *</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Stock Actual *</label>
                 <input required type="number" name="stockCurrent" value={formData.stockCurrent} onChange={handleChange} className="w-full border border-black/20 px-4 py-2 text-sm focus:border-primary focus:outline-none" />
               </div>
               
               <div>
-                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Mark as "New Arrival"</label>
+                <label className="text-[10px] tracking-widest uppercase text-primary/60 mb-2 block">Marcar como "Recién Llegado"</label>
                 <input type="checkbox" name="isNew" checked={formData.isNew} onChange={handleChange} className="w-4 h-4" />
               </div>
 
@@ -162,8 +162,8 @@ const ProductFormModal = ({ isOpen, onClose, product, onSave }) => {
         </form>
 
         <div className="p-6 border-t border-black/10 bg-[#fbfbfb] flex justify-end space-x-4">
-          <button onClick={onClose} className="px-6 py-3 border border-black/20 text-xs tracking-widest uppercase hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-accent">Cancel</button>
-          <button onClick={handleSubmit} className="px-6 py-3 bg-primary text-white text-xs tracking-widest uppercase hover:bg-black focus:outline-none focus:ring-2 focus:ring-accent">Save Product</button>
+          <button onClick={onClose} className="px-6 py-3 border border-black/20 text-xs tracking-widest uppercase hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-accent">Cancelar</button>
+          <button onClick={handleSubmit} className="px-6 py-3 bg-primary text-white text-xs tracking-widest uppercase hover:bg-black focus:outline-none focus:ring-2 focus:ring-accent">Guardar Producto</button>
         </div>
       </div>
     </div>
@@ -237,7 +237,7 @@ const Inventory = () => {
         {/* Mobile: header with toggle */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-3">
-            <h2 className="text-xl font-display text-black font-semibold">Inventory</h2>
+            <h2 className="text-xl font-display text-black font-semibold">Inventario</h2>
             <span className="px-2 py-0.5 bg-white text-gray-700 text-[10px] rounded-full border border-black/5 font-medium shadow-sm">
               {countAll} total
             </span>
@@ -247,7 +247,7 @@ const Inventory = () => {
             onClick={() => setShowMobileFilters(!showMobileFilters)}
             className="lg:hidden flex items-center space-x-1 text-xs border border-black/10 rounded-full px-3 py-1.5 text-gray-600 hover:bg-gray-100 transition-colors"
           >
-            <span>{showMobileFilters ? 'Hide' : 'Filters'}</span>
+            <span>{showMobileFilters ? 'Ocultar' : 'Filtros'}</span>
             <span className="text-[10px]">{showMobileFilters ? '▲' : '▼'}</span>
           </button>
         </div>
@@ -257,34 +257,34 @@ const Inventory = () => {
 
         {/* 2x2 Status Grid */}
         <div>
-          <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-3">Status</h3>
+          <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-3">Estado</h3>
           <div className="grid grid-cols-2 gap-3">
             <button 
               onClick={() => setFilterStatus('All')}
               className={`p-3 rounded-2xl border flex flex-col items-start transition-all ${filterStatus === 'All' ? 'border-gray-800 shadow-sm' : 'border-black/5 bg-white shadow-sm hover:border-black/20'}`}
             >
-              <span className="text-[10px] font-medium text-gray-500 mb-1">All</span>
+              <span className="text-[10px] font-medium text-gray-500 mb-1">Todos</span>
               <span className="text-lg font-bold text-black">{countAll}</span>
             </button>
             <button 
               onClick={() => setFilterStatus('Available')}
               className={`p-3 rounded-2xl border flex flex-col items-start transition-all ${filterStatus === 'Available' ? 'border-gray-800 shadow-sm' : 'border-black/5 bg-white shadow-sm hover:border-black/20'}`}
             >
-              <span className="text-[10px] font-medium text-gray-500 mb-1">Active</span>
+              <span className="text-[10px] font-medium text-gray-500 mb-1">Activos</span>
               <span className="text-lg font-bold text-black">{countAvailable}</span>
             </button>
             <button 
               onClick={() => setFilterStatus('Low Stock')}
               className={`p-3 rounded-2xl border flex flex-col items-start transition-all ${filterStatus === 'Low Stock' ? 'border-gray-800 shadow-sm' : 'border-black/5 bg-white shadow-sm hover:border-black/20'}`}
             >
-              <span className="text-[10px] font-medium text-gray-500 mb-1">Low Stock</span>
+              <span className="text-[10px] font-medium text-gray-500 mb-1">Bajo Stock</span>
               <span className="text-lg font-bold text-black">{countLowStock}</span>
             </button>
             <button 
               onClick={() => setFilterStatus('Out of Stock')}
               className={`p-3 rounded-2xl border flex flex-col items-start transition-all ${filterStatus === 'Out of Stock' ? 'border-gray-800 shadow-sm' : 'border-black/5 bg-white shadow-sm hover:border-black/20'}`}
             >
-              <span className="text-[10px] font-medium text-gray-500 mb-1">Out Stock</span>
+              <span className="text-[10px] font-medium text-gray-500 mb-1">Agotados</span>
               <span className="text-lg font-bold text-black">{countOutOfStock}</span>
             </button>
           </div>
@@ -293,24 +293,24 @@ const Inventory = () => {
         {/* Filter Controls */}
         <div className="flex flex-col gap-4">
           <div>
-            <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-2">Sort</h3>
+            <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-2">Ordenar</h3>
             <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="w-full bg-white border border-black/5 rounded-xl py-2.5 px-4 text-xs text-gray-700 shadow-sm focus:outline-none focus:border-gray-300">
-              <option value="Newest">Alphabetical: A-Z</option>
-              <option value="Price High">Price: High to Low</option>
-              <option value="Price Low">Price: Low to High</option>
+              <option value="Newest">Alfabético: A-Z</option>
+              <option value="Price High">Precio: Mayor a Menor</option>
+              <option value="Price Low">Precio: Menor a Mayor</option>
             </select>
           </div>
           <div>
-            <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-2">Category</h3>
+            <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-2">Categoría</h3>
             <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="w-full bg-white border border-black/5 rounded-xl py-2.5 px-4 text-xs text-gray-700 shadow-sm focus:outline-none focus:border-gray-300">
-              <option value="All">All Categories</option>
+              <option value="All">Todas las Categorías</option>
               {catalogs.categories.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
           <div>
-            <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-2">Location</h3>
+            <h3 className="text-[9px] font-bold text-gray-400 tracking-[0.2em] uppercase mb-2">Ubicación</h3>
             <select value={filterLocation} onChange={(e) => setFilterLocation(e.target.value)} className="w-full bg-white border border-black/5 rounded-xl py-2.5 px-4 text-xs text-gray-700 shadow-sm focus:outline-none focus:border-gray-300">
-              <option value="All">All Locations</option>
+              <option value="All">Todas las Ubicaciones</option>
               {catalogs.locations.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
@@ -320,7 +320,7 @@ const Inventory = () => {
           onClick={() => { setFilterStatus('All'); setFilterCategory('All'); setFilterLocation('All'); setSearchQuery(''); setSortBy('Newest'); }}
           className="mt-4 flex items-center justify-center space-x-2 py-3 text-xs text-gray-500 hover:text-black transition-colors"
         >
-          <span>↻ Clear Filters</span>
+          <span>↻ Limpiar Filtros</span>
         </button>
         </div>{/* end collapsible filter panels */}
       </div>{/* end sidebar */}
@@ -333,7 +333,7 @@ const Inventory = () => {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
             <input 
               type="text" 
-              placeholder="Search items..." 
+              placeholder="Buscar artículos..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-white border border-black/5 rounded-full py-2.5 pl-10 pr-10 text-sm shadow-sm focus:outline-none focus:border-gray-300"
@@ -353,7 +353,7 @@ const Inventory = () => {
               onClick={() => { setEditingProduct(null); setIsModalOpen(true); }}
               className="bg-black text-white px-5 py-2.5 rounded-full text-xs font-medium hover:bg-gray-800 transition-colors shadow-md whitespace-nowrap"
             >
-              Add Item
+              Añadir Artículo
             </button>
           </div>
         </div>
@@ -387,7 +387,7 @@ const Inventory = () => {
 
                 {/* Meta 1: Date */}
                 <div className="hidden md:block w-1/4 mb-4 md:mb-0">
-                  <span className="text-[8px] uppercase tracking-wider text-gray-400 font-bold block mb-1">Added Date</span>
+                  <span className="text-[8px] uppercase tracking-wider text-gray-400 font-bold block mb-1">Fecha de Alta</span>
                   <span className="text-xs font-medium text-gray-800">
                     {new Date(product.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                   </span>

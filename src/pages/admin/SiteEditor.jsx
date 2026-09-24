@@ -162,7 +162,7 @@ const SiteEditor = () => {
       return (
         <div className="absolute inset-0 p-4 bg-background overflow-auto">
           <div className="text-center mb-4">
-            <h2 className="font-display text-xl">Our Collections</h2>
+            <h2 className="font-display text-xl">Nuestras Colecciones</h2>
           </div>
           <div className="grid grid-cols-2 gap-2">
             {collections.map(c => (
@@ -187,7 +187,7 @@ const SiteEditor = () => {
             <p className="text-white/80 text-[10px] mb-4">{footerForm.newsletterSubtitle}</p>
             <div className="border-b border-white/20 pb-1 flex justify-between">
                <span className="text-white/40 text-[10px]">email@example.com</span>
-               <span className="text-white text-[8px] uppercase">Subscribe</span>
+               <span className="text-white text-[8px] uppercase">Suscribirse</span>
             </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ const SiteEditor = () => {
     if (activeTab === 'WHATSAPP') {
       return (
         <div className="absolute inset-0 bg-background flex flex-col items-center justify-center relative">
-           <div className="text-center p-8 text-primary/40 text-xs">Page Content Here</div>
+           <div className="text-center p-8 text-primary/40 text-xs">Contenido de la página aquí</div>
            <div className="absolute bottom-6 right-6">
              <div className="bg-[#128C7E] text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-xl shadow-green-900/20">
                <MessageCircle size={16} />
@@ -205,7 +205,7 @@ const SiteEditor = () => {
              </div>
            </div>
            <div className="absolute top-4 right-4 bg-white shadow p-3 rounded text-xs border border-black/10 max-w-[250px]">
-             <div className="font-medium mb-1">WhatsApp Preview:</div>
+             <div className="font-medium mb-1">Vista previa de WhatsApp:</div>
              <div className="mb-2"><strong>https://wa.me/{waForm.number}</strong></div>
              <div className="italic text-[10px] text-gray-500 line-clamp-3">{waForm.message}</div>
            </div>
@@ -219,8 +219,8 @@ const SiteEditor = () => {
       {/* Editor Panel */}
       <div className="flex-1 lg:max-w-2xl flex flex-col">
         <div className="mb-6 lg:mb-8">
-          <h2 className="text-2xl lg:text-3xl font-display mb-1 lg:mb-2">Site Editor</h2>
-          <span className="text-[10px] lg:text-xs tracking-widest text-primary/40 uppercase">CUSTOMIZE STOREFRONT PAGES</span>
+          <h2 className="text-2xl lg:text-3xl font-display mb-1 lg:mb-2">Editor Web</h2>
+          <span className="text-[10px] lg:text-xs tracking-widest text-primary/40 uppercase">PERSONALIZAR PÁGINAS DE LA TIENDA</span>
         </div>
 
         {/* Tabs */}
@@ -268,7 +268,7 @@ const SiteEditor = () => {
       {/* Live Preview Panel - hidden on mobile */}
       <div className="hidden lg:flex w-full lg:w-96 flex-col shrink-0 sticky top-12 h-[500px] lg:h-[calc(100vh-160px)] mt-8 lg:mt-0">
         <div className="flex items-center justify-between mb-4">
-          <span className="text-[10px] lg:text-xs tracking-widest text-primary/60 uppercase flex items-center"><span className="w-2 h-2 bg-accent rounded-full mr-2"></span> LIVE PREVIEW</span>
+          <span className="text-[10px] lg:text-xs tracking-widest text-primary/60 uppercase flex items-center"><span className="w-2 h-2 bg-accent rounded-full mr-2"></span> VISTA PREVIA</span>
           {!isSaved && <span className="text-[10px] tracking-widest text-accent uppercase font-bold">● Cambios sin guardar</span>}
         </div>
         

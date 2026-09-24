@@ -42,7 +42,7 @@ const Subscribers = () => {
   return (
     <div className="max-w-6xl mx-auto w-full flex flex-col">
       <div className="mb-6">
-        <h2 className="text-2xl md:text-3xl font-display mb-2">Newsletter Subscribers</h2>
+        <h2 className="text-2xl md:text-3xl font-display mb-2">Suscriptores del Boletín</h2>
         <p className="text-gray-500 text-sm">Correos registrados desde el pie de página.</p>
       </div>
 

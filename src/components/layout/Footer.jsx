@@ -82,7 +82,7 @@ const Footer = () => {
 
               <div className="flex flex-col sm:flex-row items-end gap-6">
                 <div className="flex-1 w-full">
-                  <label className="text-white/40 text-[10px] mb-2 block">Your Email ID</label>
+                  <label className="text-white/40 text-[10px] mb-2 block">Tu Correo Electrónico</label>
                   <input 
                     type="email" 
                     value={email}
@@ -98,7 +98,7 @@ const Footer = () => {
                   disabled={status === 'LOADING'}
                   className="text-[10px] tracking-widest uppercase border border-white/20 text-white px-8 py-3 hover:bg-accent hover:border-accent transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[120px]"
                 >
-                  {status === 'LOADING' ? <Loader2 size={14} className="animate-spin" /> : 'Subscribe'}
+                  {status === 'LOADING' ? <Loader2 size={14} className="animate-spin" /> : 'Suscribirse'}
                 </button>
               </div>
 

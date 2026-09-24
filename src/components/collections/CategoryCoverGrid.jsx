@@ -12,8 +12,8 @@ const CategoryCoverGrid = () => {
       {/* Section header */}
       <div className="px-8 md:px-16 py-12 md:py-16 border-b border-white/5 flex items-end justify-between">
         <div>
-          <span className="text-[#BF953F] text-[10px] tracking-[0.3em] uppercase block mb-3">Our Collections</span>
-          <h2 className="font-display text-3xl md:text-5xl text-white leading-tight">Explore the<br /><span className="italic font-serif text-[#FCF6BA]">full range</span></h2>
+          <span className="text-[#BF953F] text-[10px] tracking-[0.3em] uppercase block mb-3">Nuestras Colecciones</span>
+          <h2 className="font-display text-3xl md:text-5xl text-white leading-tight">Explora nuestra<br /><span className="italic font-serif text-[#FCF6BA]">gama completa</span></h2>
         </div>
         <span className="text-white/20 text-xs tracking-widest uppercase hidden md:block">Creaciones Oly · Est. 2024</span>
       </div>

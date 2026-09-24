@@ -26,10 +26,10 @@ const AdminLayout = () => {
   }
 
   const navItems = [
-    { to: '/admin', label: 'Dashboard', icon: <LayoutDashboard size={18} />, end: true },
-    { to: '/admin/catalogs', label: 'Catalogs', icon: <BookOpen size={18} /> },
-    { to: '/admin/editor', label: 'Editor', icon: <Settings size={18} /> },
-    { to: '/admin/subscribers', label: 'Newsletter', icon: <Search size={18} /> },
+    { to: '/admin', label: 'Panel', icon: <LayoutDashboard size={18} />, end: true },
+    { to: '/admin/catalogs', label: 'Catálogos', icon: <BookOpen size={18} /> },
+    { to: '/admin/editor', label: 'Editor Web', icon: <Settings size={18} /> },
+    { to: '/admin/subscribers', label: 'Boletín', icon: <Search size={18} /> },
   ];
 
   return (
@@ -80,7 +80,7 @@ const AdminLayout = () => {
             title="Ir a la tienda"
           >
             <Home size={14} />
-            <span>Store</span>
+            <span>Tienda</span>
           </button>
 
           {/* Logout - desktop */}
@@ -92,7 +92,7 @@ const AdminLayout = () => {
             className="hidden md:flex items-center space-x-1 text-xs font-medium tracking-widest text-gray-500 hover:text-red-500 transition-colors uppercase mr-2"
           >
             <LogOut size={14} />
-            <span>Sign Out</span>
+            <span>Cerrar Sesión</span>
           </button>
 
           {/* Mobile hamburger */}
@@ -131,7 +131,7 @@ const AdminLayout = () => {
             className="flex items-center space-x-3 px-5 py-4 text-sm font-medium text-gray-600 hover:bg-gray-50 border-b border-black/5"
           >
             <Home size={18} />
-            <span>Go to Store</span>
+            <span>Ir a la Tienda</span>
           </button>
 
           <button
@@ -143,7 +143,7 @@ const AdminLayout = () => {
             className="flex items-center space-x-3 px-5 py-4 text-sm font-medium text-red-500 hover:bg-red-50"
           >
             <LogOut size={18} />
-            <span>Sign Out</span>
+            <span>Cerrar Sesión</span>
           </button>
         </div>
       )}

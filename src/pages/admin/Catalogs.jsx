@@ -36,7 +36,7 @@ const SimpleCatalogList = ({ title, items, catalogName }) => {
             type="text" 
             value={newItem} 
             onChange={e => setNewItem(e.target.value)} 
-            placeholder="New option..."
+            placeholder="Nueva opción..."
             className="flex-1 bg-white border border-black/10 px-3 py-2 text-xs focus:outline-none focus:border-accent"
           />
           <button type="submit" className="bg-primary text-white px-3 py-2 text-xs hover:bg-black"><Plus size={14}/></button>
@@ -52,23 +52,23 @@ const Catalogs = () => {
   return (
     <div className="h-full flex flex-col">
       <div className="mb-8">
-        <h2 className="text-3xl font-display mb-2">Manageable Catalogs</h2>
-        <span className="text-xs tracking-widest text-primary/40 uppercase">SYSTEM CONFIGURATION</span>
+        <h2 className="text-3xl font-display mb-2">Catálogos Administrables</h2>
+        <span className="text-xs tracking-widest text-primary/40 uppercase">CONFIGURACIÓN DEL SISTEMA</span>
       </div>
       
       <p className="text-sm text-primary/60 mb-8 max-w-3xl">
-        Add or remove options from the dropdowns used throughout the system. This allows the inventory structure to scale dynamically without requiring code changes. (Note: Collections are managed in the Site Editor).
+        Añade o elimina opciones de las listas desplegables usadas en el sistema. Esto permite que la estructura del inventario escale dinámicamente sin requerir cambios en el código. (Nota: Las Colecciones se administran en el Editor Web).
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-12">
-        <SimpleCatalogList title="Categories" items={catalogs.categories} catalogName="categories" />
-        <SimpleCatalogList title="Materials" items={catalogs.materials} catalogName="materials" />
-        <SimpleCatalogList title="Stones" items={catalogs.stones} catalogName="stones" />
-        <SimpleCatalogList title="Colors" items={catalogs.colors} catalogName="colors" />
-        <SimpleCatalogList title="Sizes" items={catalogs.sizes} catalogName="sizes" />
-        <SimpleCatalogList title="Genders" items={catalogs.genders} catalogName="genders" />
-        <SimpleCatalogList title="Brands" items={catalogs.brands} catalogName="brands" />
-        <SimpleCatalogList title="Locations" items={catalogs.locations} catalogName="locations" />
+        <SimpleCatalogList title="Categorías" items={catalogs.categories} catalogName="categories" />
+        <SimpleCatalogList title="Materiales" items={catalogs.materials} catalogName="materials" />
+        <SimpleCatalogList title="Piedras" items={catalogs.stones} catalogName="stones" />
+        <SimpleCatalogList title="Colores" items={catalogs.colors} catalogName="colors" />
+        <SimpleCatalogList title="Tamaños" items={catalogs.sizes} catalogName="sizes" />
+        <SimpleCatalogList title="Géneros" items={catalogs.genders} catalogName="genders" />
+        <SimpleCatalogList title="Marcas" items={catalogs.brands} catalogName="brands" />
+        <SimpleCatalogList title="Ubicaciones" items={catalogs.locations} catalogName="locations" />
       </div>
     </div>
   );

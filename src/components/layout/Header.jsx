@@ -88,33 +88,8 @@ const Header = () => {
           )}
         </Link>
         
-        {/* Main Nav */}
+        {/* Main Nav (Removed categories) */}
         <nav className="hidden lg:flex items-center space-x-8">
-          <div 
-            className="flex items-center h-20"
-            onMouseEnter={() => handleMouseEnter('MEN')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <span className={`text-xs tracking-[0.2em] font-medium cursor-pointer transition-colors ${activeDropdown === 'MEN' ? 'text-accent' : 'text-primary hover:text-accent'}`}>
-              MEN
-            </span>
-          </div>
-          <div 
-            className="flex items-center h-20"
-            onMouseEnter={() => handleMouseEnter('WOMEN')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <span className={`text-xs tracking-[0.2em] font-medium cursor-pointer transition-colors ${activeDropdown === 'WOMEN' ? 'text-accent' : 'text-primary hover:text-accent'}`}>
-              WOMEN
-            </span>
-          </div>
-          
-          <div className="w-px h-4 bg-primary/20 mx-2"></div>
-          
-          <ScrollNavLink to="/category/c1">RINGS</ScrollNavLink>
-          <ScrollNavLink to="/category/c4">WATCHES</ScrollNavLink>
-          <ScrollNavLink to="/category/c3">BRACELETS</ScrollNavLink>
-          <ScrollNavLink to="/category/c5">EARRINGS</ScrollNavLink>
         </nav>
         
         {/* Actions */}
@@ -130,7 +105,7 @@ const Header = () => {
               className="hidden md:flex items-center space-x-2 text-[10px] tracking-[0.2em] uppercase bg-primary text-white px-4 py-2 hover:bg-accent transition-colors"
             >
               <span>&#9964;</span>
-              <span>Admin Panel</span>
+              <span>Panel de Control</span>
             </button>
           )}
 
@@ -139,7 +114,7 @@ const Header = () => {
             isAuthenticated ? (
               <Link to="/profile" className="hidden md:flex items-center space-x-2 text-[10px] tracking-[0.2em] uppercase text-primary/60 hover:text-primary transition-colors">
                 <User size={14} />
-                <span>Profile</span>
+                <span>Perfil</span>
               </Link>
             ) : (
               <div className="flex items-center space-x-2">
@@ -147,13 +122,13 @@ const Header = () => {
                   onClick={() => navigate('/login')}
                   className="text-xs font-medium tracking-widest px-3 py-2 text-primary hover:text-accent transition-colors uppercase"
                 >
-                  Log In
+                  Iniciar Sesión
                 </button>
                 <button 
                   onClick={() => navigate('/register')}
                   className="text-xs font-medium tracking-widest border border-primary/20 px-4 py-2 hover:bg-primary hover:text-white transition-colors uppercase"
                 >
-                  Sign Up
+                  Registrarse
                 </button>
               </div>
             )
@@ -161,21 +136,7 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Dropdowns */}
-      <MegaDropdown 
-        title="MEN'S" 
-        isOpen={activeDropdown === 'MEN'} 
-        onMouseEnter={() => handleMouseEnter('MEN')}
-        onMouseLeave={handleMouseLeave}
-        collections={collections}
-      />
-      <MegaDropdown 
-        title="WOMEN'S" 
-        isOpen={activeDropdown === 'WOMEN'} 
-        onMouseEnter={() => handleMouseEnter('WOMEN')}
-        onMouseLeave={handleMouseLeave}
-        collections={collections}
-      />
+      {/* Dropdowns removed */}
     </header>
   );
 };
