@@ -32,14 +32,14 @@ async function seedAdmin() {
     where: { email: adminEmail },
     update: {
       passwordHash,
-      role: 'admin',
+      role: 'ADMIN',
       isVerified: true,
     },
     create: {
       name: 'Administrator',
       email: adminEmail,
       passwordHash,
-      role: 'admin',
+      role: 'ADMIN',
       isVerified: true,
     },
   });
