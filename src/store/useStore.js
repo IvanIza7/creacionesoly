@@ -337,7 +337,7 @@ export const useStore = create(
       }
     }),
     {
-      name: 'jv-gold-co-store-v7', // bumped version to clear old mock state
+      name: 'creaciones-oly-store-v1', // bumped version to clear old mock state
     }
   )
 );
