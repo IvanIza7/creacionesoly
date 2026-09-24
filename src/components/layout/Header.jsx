@@ -5,8 +5,8 @@ import { useStore } from '../../store/useStore';
 
 const ScrollNavLink = ({ to, children, className = '' }) => {
   return (
-    <Link 
-      to={to} 
+    <Link
+      to={to}
       className={`relative overflow-hidden group block ${className}`}
     >
       <span className="block transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full text-primary text-xs tracking-[0.2em] font-medium" style={{ lineHeight: 1 }}>
@@ -21,7 +21,7 @@ const ScrollNavLink = ({ to, children, className = '' }) => {
 
 const MegaDropdown = React.memo(({ title, isOpen, onMouseEnter, onMouseLeave, collections }) => {
   return (
-    <div 
+    <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={`absolute top-full left-0 w-full bg-primary text-white z-50 transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-[600px] py-12 border-t border-white/10' : 'max-h-0 py-0 border-t-0'}`}
@@ -75,7 +75,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 w-full bg-background z-40 border-b border-black/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        
+
         {/* Logo */}
         <Link to="/" className="shrink-0 flex items-center space-x-3">
           {(brandConfig.displayMode === 'LOGO' || brandConfig.displayMode === 'BOTH') && brandConfig.logoUrl && (
@@ -87,19 +87,19 @@ const Header = () => {
             </span>
           )}
         </Link>
-        
+
         {/* Main Nav (Removed categories) */}
         <nav className="hidden lg:flex items-center space-x-8">
         </nav>
-        
+
         {/* Actions */}
         <div className="flex items-center space-x-4">
           <button aria-label="Search" className="text-primary hover:text-accent transition-colors">
             <Search size={20} />
           </button>
-          
+
           {/* Admin Panel Return Button - only visible for admin users */}
-          {isAuthenticated && user?.role === 'admin' && (
+          {isAuthenticated && user?.role === 'ADMIN' && (
             <button
               onClick={() => navigate('/admin')}
               className="hidden md:flex items-center space-x-2 text-[10px] tracking-[0.2em] uppercase bg-primary text-white px-4 py-2 hover:bg-accent transition-colors"
@@ -110,7 +110,7 @@ const Header = () => {
           )}
 
           {/* Login/Profile for non-admin users */}
-          {(!isAuthenticated || (isAuthenticated && user?.role !== 'admin')) && (
+          {(!isAuthenticated || (isAuthenticated && user?.role !== 'ADMIN')) && (
             isAuthenticated ? (
               <Link to="/profile" className="hidden md:flex items-center space-x-2 text-[10px] tracking-[0.2em] uppercase text-primary/60 hover:text-primary transition-colors">
                 <User size={14} />
@@ -118,13 +118,13 @@ const Header = () => {
               </Link>
             ) : (
               <div className="flex items-center space-x-2">
-                <button 
+                <button
                   onClick={() => navigate('/login')}
                   className="text-xs font-medium tracking-widest px-3 py-2 text-primary hover:text-accent transition-colors uppercase"
                 >
                   Iniciar Sesión
                 </button>
-                <button 
+                <button
                   onClick={() => navigate('/register')}
                   className="text-xs font-medium tracking-widest border border-primary/20 px-4 py-2 hover:bg-primary hover:text-white transition-colors uppercase"
                 >
@@ -135,7 +135,7 @@ const Header = () => {
           )}
         </div>
       </div>
-      
+
       {/* Dropdowns removed */}
     </header>
   );

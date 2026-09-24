@@ -8,7 +8,7 @@ async function main() {
   const password = 'admin'; // Contraseña super básica para pruebas
 
   const existingAdmin = await prisma.user.findUnique({ where: { email } });
-  
+
   if (existingAdmin) {
     console.log('El administrador ya existe.');
     return;
@@ -22,7 +22,7 @@ async function main() {
       name: 'Super Admin',
       email,
       passwordHash,
-      role: 'admin',
+      role: 'ADMIN',
       isVerified: true
     }
   });

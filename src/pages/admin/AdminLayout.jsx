@@ -21,7 +21,7 @@ const AdminLayout = () => {
     return <Navigate to="/login" replace />;
   }
 
-  if (user && user.role !== 'admin') {
+  if (user && user.role !== 'ADMIN') {
     return <Navigate to="/" replace />;
   }
 
@@ -34,10 +34,10 @@ const AdminLayout = () => {
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] flex flex-col text-gray-800 font-sans">
-      
+
       {/* Top Navigation Bar */}
       <header className="bg-[#F8F9FA] px-4 lg:px-10 py-3 flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.02)] relative z-20 sticky top-0">
-        
+
         {/* Left: Brand / Logo */}
         <div className="flex items-center">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/')}>
@@ -63,7 +63,7 @@ const AdminLayout = () => {
               key={item.to}
               to={item.to}
               end={item.end}
-              className={({isActive}) => `px-6 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all ${isActive ? 'bg-black text-white shadow-md' : 'text-gray-500 hover:text-black hover:bg-gray-50'}`}
+              className={({ isActive }) => `px-6 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all ${isActive ? 'bg-black text-white shadow-md' : 'text-gray-500 hover:text-black hover:bg-gray-50'}`}
             >
               {item.icon}
               <span>{item.label}</span>
@@ -74,7 +74,7 @@ const AdminLayout = () => {
         {/* Right: Actions */}
         <div className="flex items-center space-x-2">
           {/* Store link - desktop */}
-          <button 
+          <button
             onClick={() => navigate('/')}
             className="hidden md:flex items-center space-x-1 text-xs font-medium tracking-widest text-gray-500 hover:text-black transition-colors uppercase mr-2"
             title="Ir a la tienda"
@@ -84,7 +84,7 @@ const AdminLayout = () => {
           </button>
 
           {/* Logout - desktop */}
-          <button 
+          <button
             onClick={async () => {
               await useStore.getState().logout();
               navigate('/login');
@@ -114,7 +114,7 @@ const AdminLayout = () => {
               to={item.to}
               end={item.end}
               onClick={() => setMobileMenuOpen(false)}
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 `flex items-center space-x-3 px-5 py-4 text-sm font-medium border-b border-black/5 transition-colors ${isActive ? 'bg-black text-white' : 'text-gray-700 hover:bg-gray-50'}`
               }
             >
@@ -152,7 +152,7 @@ const AdminLayout = () => {
       <main className="flex-1 overflow-auto flex flex-col p-4 md:p-6 lg:p-10">
         <Outlet />
       </main>
-      
+
     </div>
   );
 };
