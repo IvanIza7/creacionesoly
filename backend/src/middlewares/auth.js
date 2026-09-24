@@ -14,7 +14,7 @@ const requireAuth = async (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    
+
     // Validar sesión contra base de datos real (importante para revocar accesos)
     const user = await prisma.user.findUnique({
       where: { id: decoded.userId },
@@ -38,7 +38,7 @@ const requireAuth = async (req, res, next) => {
 };
 
 const requireAdmin = (req, res, next) => {
-  if (req.user && req.user.role === 'admin') {
+  if (req.user && req.user.role === 'ADMIN') {
     next();
   } else {
     // 403 Forbidden: Estás autenticado pero no tienes permisos.
