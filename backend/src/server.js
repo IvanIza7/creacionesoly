@@ -33,9 +33,6 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-// Servir la carpeta de imágenes subidas de forma estática
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
-
 app.set('trust proxy', 1);
 
 // Rate Limiting para Autenticación
